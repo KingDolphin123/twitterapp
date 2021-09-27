@@ -3,7 +3,6 @@ import Header from './Components/Header';
 import Body from './Components/Body';
 import Tweets from './Components/Tweets';
 
-
 function App() {
   return (
     <div>
