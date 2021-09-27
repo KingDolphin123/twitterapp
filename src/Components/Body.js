@@ -1,10 +1,10 @@
 import React from 'react';
-import "./Body.css"
+import "./Styles.css"
 
 const Body = () => {
     return (
-        <div>
-            <p>This is body</p>
+        <div classname="Body">
+            <p classname = "Body_text">This is body</p>
         </div>
     )
 }
