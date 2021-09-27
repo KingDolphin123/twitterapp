@@ -3,7 +3,6 @@ import Header from './Components/Header';
 import Body from './Components/Body';
 import Tweets from './Components/Tweets';
 
-console.log('i like cheese')
 function App() {
   return (
     <div>
