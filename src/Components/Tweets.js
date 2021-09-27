@@ -1,8 +1,10 @@
 import React from 'react'
+import "./Styles.css"
+
 
 const Tweets = props => {
     return ( 
-        <div>
+        <div className="tweetname">
             <p>{props.title}</p>
             <p>{props.content}</p>
             <p>{props.author}</p>

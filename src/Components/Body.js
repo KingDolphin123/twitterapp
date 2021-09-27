@@ -3,8 +3,8 @@ import "./Styles.css"
 
 const Body = () => {
     return (
-        <div classname="Body">
-            <p classname = "Body_text">This is body</p>
+        <div className="Body">
+            <p className = "Body_text">This is body</p>
         </div>
     )
 }

@@ -1,6 +1,10 @@
 .Body {
+    margin: 100px;
     background-color: blueviolet;
 }
 .Body_text {
-    background-color: blueviolet;
+    background-color: rgb(153, 119, 184);
+}
+.tweetname {
+    margin: 50px;
 }
