@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Components/Header';
 import Body from './Components/Body';
 import Tweets from './Components/Tweets';
+import Counter2 from './Components/Counter2';
 import "./css/App.css";
 
 function App() {
@@ -9,6 +10,9 @@ function App() {
     <div className = "bg">
       <Header />
       <Body />
+      <div>
+        <Counter2 />
+      </div>
       <div className="app">
         <Tweets 
           title={'Title1'}
