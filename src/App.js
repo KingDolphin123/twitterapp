@@ -20,14 +20,16 @@ function App() {
           author = {"Author1"}
           date = {'Date1'}
           likes = {"Likes1"}
-          retweets = {"Retweets1"} />
+          retweets = {"Retweets1"}
+          trending = {false} />
         <Tweets 
           title={'Title2'}
           content = {'Content2'}
           author = {"Author2"}
           date = {'Date2'}
           likes = {"Likes2"}
-          retweets = {"Retweets2"} />
+          retweets = {"Retweets2"}
+          trending = {true} />
       </div>
     </div>
   );
