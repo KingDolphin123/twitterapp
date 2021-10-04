@@ -1,5 +1,8 @@
 import React, {useState} from 'react'
 import "../css/Tweets.css"
+import whiteheart from "../css/1whiteheart.png"
+import redheart from "../css/1redheart.png"
+
 
 const Tweets = props => {
     const [likes,setLikes] = useState('False');
@@ -15,7 +18,7 @@ const Tweets = props => {
                     <p>{props.likes}</p>
                     <p>{props.retweets}</p>
                     <h1>Liked?: {likes}</h1>
-                    <input type='image' name = 'Add Like' src='1whiteheart.png' alt = 'whiteheart' onClick={()=>{
+                    <input className = 'image' type='image' name = 'Add Like' src={whiteheart} alt = 'whiteheart' onClick={()=>{
                         setLikes('True')
                     }}/>
                     <h1>Retweeted?: {retweet}</h1>
@@ -35,7 +38,7 @@ const Tweets = props => {
                     <p>{props.likes}</p>
                     <p>{props.retweets}</p>
                     <h1>Liked?: {likes}</h1>
-                    <input type='image' name = 'Add Like' src='1redheart.png' alt = 'redheart' onClick={()=>{
+                    <input className = 'image' type='image' name = 'Add Like' src={redheart} alt = 'redheart' onClick={()=>{
                         setLikes('False')
                     }}/>
                     <h1>Retweeted?: {retweet}</h1>
@@ -57,7 +60,7 @@ const Tweets = props => {
                     <p>{props.likes}</p>
                     <p>{props.retweets}</p>
                     <h1>Liked?: {likes}</h1>
-                    <input type='image' name = 'Add Like' src='1whiteheart.png' alt = 'whiteheart' onClick={()=>{
+                    <input className = 'image' type='image' name = 'Add Like' src={whiteheart} alt = 'whiteheart' onClick={()=>{
                         setLikes('True')
                     }}/>
                     <h1>Retweeted?: {retweet}</h1>
@@ -77,7 +80,7 @@ const Tweets = props => {
                     <p>{props.likes}</p>
                     <p>{props.retweets}</p>
                     <h1>Liked?: {likes}</h1>
-                    <input type='image' name = 'Add Like' src='1redheart.png' alt = 'redheart' onClick={()=>{
+                    <input className = 'image' type='image' name = 'Add Like' src={redheart} alt = 'redheart' onClick={()=>{
                         setLikes('False')
                     }}/>
                     <h1>Retweeted?: {retweet}</h1>
