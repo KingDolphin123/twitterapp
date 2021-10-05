@@ -1,7 +1,6 @@
 .tweets {
     display: flex;
     flex-direction: column;
-    padding: 25px;
     background-color: aliceblue;
     text-shadow: 2px 2px 6px darkorchid;
 }

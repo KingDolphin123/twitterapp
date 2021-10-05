@@ -1,8 +1,13 @@
+*{
+    margin:0%;
+    padding:0%;
+    border:0%;
+}
 .app{
     display:flex;
     flex-direction: row;
-    padding: 25px;
 }
 .bg{
-    background-color: cadetblue;
+    background-color: rgb(119, 178, 255);
+    margin:10px;
 }
