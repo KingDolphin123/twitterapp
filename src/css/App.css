@@ -7,6 +7,8 @@
     margin: 50px;
     display:flex;
     flex-direction: column;
+    margin-left: 400px;
+    margin-right: 400px;
 }
 .bg{
     background-color: rgb(119, 178, 255);

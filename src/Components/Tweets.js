@@ -15,6 +15,7 @@ const Tweets = props => {
             <p className = 'tweetdate'>{props.date}</p>
             <p className = 'tweetlikes'>{props.likes}</p>
             <p className = 'tweetretweets'>{props.retweets}</p>
+            <p className = 'tweettrending'>Trending: {trending? "Yes":"No"}</p>
             <div className = 'buttons'>
                 <h1>Liked: {likes? "True":"False"}</h1>
                 {likes ? <input className = 'image' type='image' name = 'Add Like' src={redheart} alt = 'redheart' onClick={()=>{setLikes(false)}}/> : <input className = 'image' type='image' name = 'Add Like' src={whiteheart} alt = 'whiteheart' onClick={()=>{setLikes(true)}}/>}
