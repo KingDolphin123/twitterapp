@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import "../css/Tweets.css"
-import whiteheart from "../css/1whiteheart.png"
-import redheart from "../css/1redheart.png"
+import whiteheart from "../css/whiteheart.png"
+import blueheart from "../css/blueheart.png"
 
 const Tweets = props => {
     const [likes,setLikes] = useState(false);
@@ -18,7 +18,7 @@ const Tweets = props => {
             <p className = 'tweettrending'>Trending: {trending? "Yes":"No"}</p>
             <div className = 'buttons'>
                 <h1>Liked: {likes? "True":"False"}</h1>
-                {likes ? <input className = 'image' type='image' name = 'Add Like' src={redheart} alt = 'redheart' onClick={()=>{setLikes(false)}}/> : <input className = 'image' type='image' name = 'Add Like' src={whiteheart} alt = 'whiteheart' onClick={()=>{setLikes(true)}}/>}
+                {likes ? <input className = 'image' type='image' name = 'Add Like' src={blueheart} alt = 'redheart' onClick={()=>{setLikes(false)}}/> : <input className = 'image' type='image' name = 'Add Like' src={whiteheart} alt = 'whiteheart' onClick={()=>{setLikes(true)}}/>}
                 <h1>Retweeted: {retweet? "True":"False"}</h1>
                 {retweet ? <button className = 'button' onClick={()=>{setRetweet(false)}}>Undo Retweet</button> : <button className = 'button' onClick={()=>{setRetweet(true)}}>Retweet</button>}
                 <h1>Trending: {trending? "True":"False"}</h1>
