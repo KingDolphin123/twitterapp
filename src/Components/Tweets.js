@@ -16,13 +16,14 @@ const Tweets = props => {
             <p className = 'tweetlikes'>{props.likes}</p>
             <p className = 'tweetretweets'>{props.retweets}</p>
             <p className = 'tweettrending'>Trending: {trending? "Yes":"No"}</p>
-            <div className = 'buttons'>
+            <div>
                 <h1>Liked: {likes? "True":"False"}</h1>
-                {likes ? <input className = 'image' type='image' name = 'Add Like' src={blueheart} alt = 'redheart' onClick={()=>{setLikes(false)}}/> : <input className = 'image' type='image' name = 'Add Like' src={whiteheart} alt = 'whiteheart' onClick={()=>{setLikes(true)}}/>}
                 <h1>Retweeted: {retweet? "True":"False"}</h1>
-                {retweet ? <button className = 'button' onClick={()=>{setRetweet(false)}}>Undo Retweet</button> : <button className = 'button' onClick={()=>{setRetweet(true)}}>Retweet</button>}
-                <h1>Trending: {trending? "True":"False"}</h1>
-                {trending ? <button className = 'button' onClick={()=>{setTrending(false)}}>make not trending</button> : <button className = 'button' onClick={()=>{setTrending(true)}}>make trending</button>}
+                <div className = 'buttons'>
+                    {retweet ? <button className = 'button' onClick={()=>{setRetweet(false)}}>Undo Retweet</button> : <button className = 'button' onClick={()=>{setRetweet(true)}}>Retweet</button>}
+                    {likes ? <input className = 'image' type='image' name = 'Add Like' src={blueheart} alt = 'redheart' onClick={()=>{setLikes(false)}}/> : <input className = 'image' type='image' name = 'Add Like' src={whiteheart} alt = 'whiteheart' onClick={()=>{setLikes(true)}}/>}
+                    {trending ? <button className = 'button' onClick={()=>{setTrending(false)}}>make not trending</button> : <button className = 'button' onClick={()=>{setTrending(true)}}>make trending</button>}
+                </div>
             </div>
         </div>
     )   
