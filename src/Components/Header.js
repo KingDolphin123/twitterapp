@@ -1,12 +1,11 @@
 import React from 'react';
+import "../css/Header.css"
 
 const Header = () => {
     let headerTitle = "This is header";
-    let numberOfUsers = 23;
     return (
-        <div>
+        <div className = 'title'>
             <p>{headerTitle}</p>
-            <p>Number of users: {numberOfUsers}</p>
         </div>
     )
 }

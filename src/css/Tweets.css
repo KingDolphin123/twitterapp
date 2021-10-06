@@ -1,10 +1,21 @@
 .tweets {
+    text-align: center;
+    line-height: 175%;
     display: flex;
     flex-direction: column;
-    background-color: aliceblue;
+    background-color: rgb(255, 255, 255);
     text-shadow: 2px 2px 6px darkorchid;
+    padding: 10px;
+    margin:10px;
 }
 .image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
     width: 50px;
     height: 50px;
+}
+.button{
+
 }

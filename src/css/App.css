@@ -4,10 +4,11 @@
     border:0%;
 }
 .app{
+    margin: 50px;
     display:flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 .bg{
     background-color: rgb(119, 178, 255);
-    margin:10px;
+    height: 1000px;
 }

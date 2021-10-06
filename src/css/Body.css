@@ -1,7 +1,9 @@
 .Body {
-    background-color: blueviolet;
+    background-color: rgb(255, 255, 255);
+    padding: 5px;
 
 }
 .Body_text {
-    background-color: rgb(153, 119, 184);
+    background-color: rgb(247, 238, 255);
+    text-align: center;
 }
