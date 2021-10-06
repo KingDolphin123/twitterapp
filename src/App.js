@@ -26,6 +26,14 @@ function App() {
           likes = {"Likes2"}
           retweets = {"Retweets2"}
           trending = {true} />
+        <Tweets 
+          title={'Title3'}
+          content = {'Content3'}
+          author = {"Author3"}
+          date = {'Date3'}
+          likes = {"Likes3"}
+          retweets = {"Retweets3"}
+          trending = {false} />
       </div>
     </div>
   );
