@@ -11,13 +11,16 @@ const Tweets = props => {
     let numlikes = Number(props.likes)
     return (
         <div className ="tweets">
-            <p className = 'tweettitle'>{props.title}</p>
-            <p className = 'tweetcontent'>{props.content}</p>
-            <p className = 'tweetauthor'>{props.author}</p>
-            <p className = 'tweetdate'>{props.date}</p>
-            <p className = 'tweetlikes'>{updater? (numlikes++):numlikes}</p>
-            <p className = 'tweetretweets'>{props.retweets}</p>
-            <p className = 'tweettrending'>Trending: {trending? "Yes":"No"}</p>
+            <p className = 'tweetauthordate'>{props.author} - {props.date}</p>
+            <div className = 'titleandcontent'>
+                <p className = 'tweettitle'>{props.title}</p>
+                <p className = 'tweetcontent'>{props.content}</p>
+            </div>
+            <div className = 'buttondata'>                
+                <p className = 'tweetlikes'>{updater? (numlikes++):numlikes}</p>
+                <p className = 'tweetretweets'>{props.retweets}</p>
+                <p className = 'tweettrending'>Trending: {trending? "Yes":"No"}</p>
+            </div>
             <div>
                 <h1>Liked: {likes? "True":"False"}</h1>
                 <h1>Retweeted: {retweet? "True":"False"}</h1>

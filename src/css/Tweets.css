@@ -56,3 +56,10 @@ button:active{
     font-size: 60px;
     line-height: 1em;
 }
+.tweetauthordate{
+    font-family: 'Bebas Neue', cursive;
+    font-weight: bold;
+    letter-spacing: .25em;
+    text-align: left;
+    padding-left:2%
+}
