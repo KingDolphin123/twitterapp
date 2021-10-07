@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
 .tweets {
     border-radius:25px;
@@ -69,4 +70,7 @@ button:active{
 }
 .tweetheader{
     padding:1%;
+}
+.tweetdate{
+    
 }
