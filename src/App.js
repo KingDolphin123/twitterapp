@@ -14,8 +14,8 @@ function App() {
           title={'Wang Kŏn'}
           content = {'Becomes king of Taebong in 918, He is important because he achieved “true national unification” by uniting the Korean peninsula under Koryo. His name means king and establisher. He had 29 wives to cement central power.'}
           author = {"Koryo"}
-          date = {'918'}
-          likes = {"3"}
+          date = {'918 ce'}
+          likes = {3}
           retweets = {"1"} />
         <Tweets 
           title={'Benjamin "Jimnyoung" Oh changes name to Jimin'}
@@ -25,10 +25,10 @@ function App() {
           likes = {"9002"}
           retweets = {"851"} />
         <Tweets 
-          title={'Title3'}
-          content = {'Content3'}
-          author = {"Author3"}
-          date = {'Date3'}
+          title={'Ben Simmons isb ad'}
+          content = {'title^'}
+          author = {"jimin"}
+          date = {'1/34/12'}
           likes = {"4"}
           retweets = {"2"} />
       </div>
