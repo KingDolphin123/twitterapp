@@ -47,7 +47,6 @@ button:active{
 .buttons{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 2vw;
 }
 .tweettitle{
     padding:10px;
@@ -56,10 +55,18 @@ button:active{
     font-size: 60px;
     line-height: 1em;
 }
-.tweetauthordate{
+.tweetauthor{
     font-family: 'Bebas Neue', cursive;
     font-weight: bold;
     letter-spacing: .25em;
     text-align: left;
-    padding-left:2%
+    margin-left:2%
+}
+.authordateflex{
+    display:inline-flex;
+    flex-direction: row;
+    justify-content: left;
+}
+.tweetheader{
+    padding:1%;
 }

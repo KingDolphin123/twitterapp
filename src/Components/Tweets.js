@@ -11,7 +11,11 @@ const Tweets = props => {
     let numlikes = Number(props.likes)
     return (
         <div className ="tweets">
-            <p className = 'tweetauthordate'>{props.author} - {props.date}</p>
+            <div className = 'authordateflex'>
+                <p className = 'tweetheader tweetauthor'>{props.author}</p>
+                <p className = 'tweetheader dash'>-</p>
+                <p className = 'tweetheader tweetdate'>{props.date}</p>
+            </div>
             <div className = 'titleandcontent'>
                 <p className = 'tweettitle'>{props.title}</p>
                 <p className = 'tweetcontent'>{props.content}</p>
