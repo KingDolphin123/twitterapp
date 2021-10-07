@@ -17,7 +17,7 @@
 }
 .image {
     display: block;
-    margin-top: .5%;
+    padding: 10px;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
@@ -25,7 +25,8 @@
     height: 50px;
 }
 .button{
-    flex: 0 0 33%;
+    border-radius: 10px;
+    width: 150px;
     background-color: rgb(119, 178, 255);
     padding: 10px;
     border:none;
@@ -45,8 +46,7 @@ button:active{
     background-color:rgb(255, 255, 255)
 }
 .buttons{
-    display:flex;
-    flex-direction: row;
-    flex-basis: 20%;
-    justify-content: flex-end;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 2vw;
 }
