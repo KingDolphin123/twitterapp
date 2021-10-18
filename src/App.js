@@ -7,14 +7,12 @@ import "./css/App.css";
 function App() {
   let sampletweet1 = {content:'hello',author:'koryo',date:'918ce',likes:3,retweets:1}
   let sampletweet2 = {content:'ayhaab',author:'saleem',date:'2020',likes:1,retweets:5}
+  let newtweet = {content:'',author:'',date:'',likes:3,retweets:1};
   let tweetArr = [sampletweet1,sampletweet2]
-  const tweetArray = tweetArr.map((tweet,i) => {
-    return <Tweets key={i} content={tweet.content} author={tweet.author} date={tweet.date} likes={tweet.likes} retweets={tweet.retweets}/>
-  });
   const [inputStateContent, setInputStateContent] = useState('');
   const [inputStateAuthor, setInputStateAuthor] = useState('');
   const [inputStateDate, setInputStateDate] = useState('');
-  let newtweet = {content:'',author:'',date:'',likes:3,retweets:1};
+  const [Array, setArray] = useState(tweetArr);
   const changeHandler1 = (e) => {
     setInputStateContent(e.target.value);
   };
@@ -32,11 +30,7 @@ function App() {
       setInputStateAuthor("");
       newtweet.date = {inputStateDate};
       setInputStateDate("");
-      tweetArr.push(newtweet);
-      newtweet = {content:'',author:'',date:'',likes:3,retweets:1};
-      return(
-        tweetArray
-      )
+      setArray([...tweetArr,newtweet])
     }
   }
   return (
@@ -49,7 +43,9 @@ function App() {
       <button type = 'submit' onClick={submit}>SUBMIT</button>
       <p>{inputStateContent}{inputStateAuthor}{inputStateDate}</p>
       <div className="app">
-          {tweetArray}
+          {Array.map((tweet,i) => (
+            <Tweets key={i+1} content={tweet.content} author={tweet.author} date={tweet.date} likes={tweet.likes} retweets={tweet.retweets}/>
+          ))}
       </div>
     </div>
   );
