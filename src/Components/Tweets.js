@@ -16,8 +16,7 @@ const Tweets = props => {
                 <p className = 'tweetheader dash'>-</p>
                 <p className = 'tweetheader tweetdate'>{props.date}</p>
             </div>
-            <div className = 'titleandcontent'>
-                <p className = 'tweettitle'>{props.title}</p>
+            <div className = 'content'>
                 <p className = 'tweetcontent'>{props.content}</p>
             </div>
             <div className = 'buttondata'>                

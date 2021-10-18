@@ -5,35 +5,22 @@ import Tweets from './Components/Tweets';
 import "./css/App.css";
 
 function App() {
+  let sampletweet1 = {content:'hello',author:'koryo',date:'918ce',likes:3,retweets:1}
+  let sampletweet2 = {content:'ayhaab',author:'saleem',date:'2020',likes:1,retweets:5}
+  let tweetArr = [sampletweet1,sampletweet2]
+  const tweetArray = tweetArr.map((tweet,i) => {
+    return <Tweets key={i} content={tweet.content} author={tweet.author} date={tweet.date} likes={tweet.likes} retweets={tweet.retweets}/>
+  });
+  
   return (
     <div className = "bg">
       <Header />
       <Body />
       <div className="app">
-        <Tweets 
-          title={'Wang Kŏn'}
-          content = {'Becomes king of Taebong in 918, He is important because he achieved “true national unification” by uniting the Korean peninsula under Koryo. His name means king and establisher. He had 29 wives to cement central power.'}
-          author = {"Koryo"}
-          date = {'918 ce'}
-          likes = {3}
-          retweets = {"1"} />
-        <Tweets 
-          title={'Benjamin "Jimnyoung" Oh changes name to Jimin'}
-          content = {'Today, Benjamin "Jimnyoung" Oh legally changed his name to Jimin. Finally the people are happy :)'}
-          author = {"Mahmoud Bin Saleem"}
-          date = {'10/2/21'}
-          likes = {"9002"}
-          retweets = {"851"} />
-        <Tweets 
-          title={'Ben Simmons isb ad'}
-          content = {'title^'}
-          author = {"jimin"}
-          date = {'1/34/12'}
-          likes = {"4"}
-          retweets = {"2"} />
+          {tweetArray}
       </div>
     </div>
   );
-}
+};
 
 export default App;
