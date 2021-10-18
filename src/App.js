@@ -34,6 +34,9 @@ function App() {
       setInputStateDate("");
       tweetArr.push(newtweet);
       newtweet = {content:'',author:'',date:'',likes:3,retweets:1};
+      return(
+        tweetArray
+      )
     }
   }
   return (
