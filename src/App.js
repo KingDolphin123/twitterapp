@@ -28,15 +28,15 @@ function App() {
 
   const filterfunc = (e) => {
     if (e.content.includes(filter)){
-      return true
+      return true;
     }
     else{
-      return false
+      return false;
     }
   }
   const filtertweets = () => {
     let filteredtweets = Array.filter(filterfunc)
-    setFilterBool(!filterBool)
+    setFilterBool(!filterBool);
     if (filteredtweets.length === 0){
       setFilterEmpty(true);
     }
@@ -44,32 +44,33 @@ function App() {
       setFilterEmpty(false);
     }
     setFilterArray(filteredtweets);
-    setFilter('')
+    setFilter('');
   }
   return (
     <div className = "bg">
       <Header />
       <Body />
-      <div className = "tweetfilter">
-        <input placeholder = 'Enter Filter..' className = 'filterinput' type="text" value = {filter} onChange={e => setFilter(e.target.value)}/>
-        {filterBool? <button type = 'submit' onClick={filtertweets}>UNFILTER</button>:<button type = 'submit' onClick={filtertweets}>FILTER</button>}
-      </div>
-      <div className = 'tweetinput'>
-        <input placeholder = 'Enter content..' className = 'input' type="text" value = {inputStateContent} onChange={e => setInputStateContent(e.target.value)}/>
-        <input placeholder = 'Enter Author..' className = 'input' type="text" value = {inputStateAuthor} onChange={e => setInputStateAuthor(e.target.value)}/>
-        <input placeholder = 'Enter Date' className = 'input' type="text" value = {inputStateDate} onChange={e => setInputStateDate(e.target.value)}/>
-        <button type = 'submit' onClick={submit}>SUBMIT</button>
-      </div>
-      <div className="app">
-        {filterempty? "no tweets to show":(filterBool?
-          (filterArray.map((tweet,i) => (
-            <Tweets key={i+1} content={tweet.content} author={tweet.author} date={tweet.date} likes={tweet.likes} retweets={tweet.retweets}/>
-          ))):
-          (Array.map((tweet,i) => (
-            <Tweets key={i+1} content={tweet.content} author={tweet.author} date={tweet.date} likes={tweet.likes} retweets={tweet.retweets}/>
-          )))
-        )}
-        
+      <div className = 'bodybody'>
+        <div className = "tweetfilter">
+          <input placeholder = 'Enter Filter..' className = 'filterinput' type="text" value = {filter} onChange={e => setFilter(e.target.value)}/>
+          {filterBool? <button className = 'inputbutton' type = 'submit' onClick={filtertweets}>UNFILTER</button>:<button className = 'inputbutton' type = 'submit' onClick={filtertweets}>FILTER</button>}
+        </div>
+        <div className = 'tweetinput'>
+          <input placeholder = 'Enter content..' className = 'input' type="text" value = {inputStateContent} onChange={e => setInputStateContent(e.target.value)}/>
+          <input placeholder = 'Enter Author..' className = 'input' type="text" value = {inputStateAuthor} onChange={e => setInputStateAuthor(e.target.value)}/>
+          <input placeholder = 'Enter Date' className = 'input' type="text" value = {inputStateDate} onChange={e => setInputStateDate(e.target.value)}/>
+          <button className = 'inputbutton' type = 'submit' onClick={submit}>SUBMIT</button>
+        </div>
+        <div className="app">
+          {filterempty? "no tweets to show":(filterBool?
+            (filterArray.map((tweet,i) => (
+              <Tweets key={i+1} content={tweet.content} author={tweet.author} date={tweet.date} likes={tweet.likes} retweets={tweet.retweets}/>
+            ))):
+            (Array.map((tweet,i) => (
+              <Tweets key={i+1} content={tweet.content} author={tweet.author} date={tweet.date} likes={tweet.likes} retweets={tweet.retweets}/>
+            )))
+          )}
+        </div>
       </div>
     </div>
   );
