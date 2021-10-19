@@ -50,13 +50,16 @@ function App() {
     <div className = "bg">
       <Header />
       <Body />
-      <input type="text" value = {inputStateContent} onChange={e => setInputStateContent(e.target.value)}/>
-      <input type="text" value = {inputStateAuthor} onChange={e => setInputStateAuthor(e.target.value)}/>
-      <input type="text" value = {inputStateDate} onChange={e => setInputStateDate(e.target.value)}/>
-      <input type="text" value = {filter} onChange={e => setFilter(e.target.value)}/>
-      <button type = 'submit' onClick={submit}>SUBMIT</button>
-      {filterBool? <button type = 'submit' onClick={filtertweets}>UNFILTER</button>:<button type = 'submit' onClick={filtertweets}>FILTER</button>}
-      <p>{inputStateContent}{inputStateAuthor}{inputStateDate}</p>
+      <div className = "tweetfilter">
+        <input placeholder = 'Enter Filter..' className = 'filterinput' type="text" value = {filter} onChange={e => setFilter(e.target.value)}/>
+        {filterBool? <button type = 'submit' onClick={filtertweets}>UNFILTER</button>:<button type = 'submit' onClick={filtertweets}>FILTER</button>}
+      </div>
+      <div className = 'tweetinput'>
+        <input placeholder = 'Enter content..' className = 'input' type="text" value = {inputStateContent} onChange={e => setInputStateContent(e.target.value)}/>
+        <input placeholder = 'Enter Author..' className = 'input' type="text" value = {inputStateAuthor} onChange={e => setInputStateAuthor(e.target.value)}/>
+        <input placeholder = 'Enter Date' className = 'input' type="text" value = {inputStateDate} onChange={e => setInputStateDate(e.target.value)}/>
+        <button type = 'submit' onClick={submit}>SUBMIT</button>
+      </div>
       <div className="app">
         {filterempty? "no tweets to show":(filterBool?
           (filterArray.map((tweet,i) => (

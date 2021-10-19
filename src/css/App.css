@@ -14,3 +14,43 @@
     background-color: rgb(119, 178, 255);
     height: 100%;
 }
+.tweetinput{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.input{
+    border: none;
+    padding: 1%;
+    margin: .2%;
+    width: 30%;
+    border-radius: 7px;
+    background-color: whitesmoke;
+    text-overflow: ellipsis;
+}
+.input:focus{
+    background-color: rgb(185, 216, 255);
+    outline: none;
+}
+.tweetfilter{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 2%;
+}
+.filterinput{
+    border: none;
+    padding: 1%;
+    margin: .1%;
+    margin-top: none;
+    margin-bottom: none;
+    padding-top: .4%;
+    padding-bottom: .4%;
+    width: 15%;
+    border-radius: 7px;
+    background-color: whitesmoke;
+}
+.filterinput:focus{
+    background-color: rgb(185, 216, 255);
+    outline: none;
+}
