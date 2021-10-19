@@ -24,23 +24,18 @@ function App() {
       setInputStateDate("");
     };
   };
-  // const forEachFilter = (e) => {
-  //   let eArray = [e]
-  //   if (eArray.includes(filter)){
-  //     setFilterArray(filterArray1 => [...filterArray1, eArray])
-  //   }
-  // }
-  // const filtertweets = () => {
-  //   Array.forEach(function(element){
-  //     forEachFilter(element)
-  //   })
-  //   setFilterBool(!filterBool)
-  // }
   const filterfunc = (e) => {
-    
+    if (e.content.includes(filter)){
+      return true
+    }
+    else{
+      return false
+    }
   }
   const filtertweets = () => {
     let filteredtweets = Array.filter(filterfunc)
+    setFilterBool(!filterBool)
+    setFilterArray(filteredtweets)
   }
   return (
     <div className = "bg">
