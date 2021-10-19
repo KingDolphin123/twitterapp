@@ -12,7 +12,7 @@ function App() {
   const [inputStateAuthor, setInputStateAuthor] = useState('');
   const [inputStateDate, setInputStateDate] = useState('');
   const [Array, setArray] = useState(tweetArr);
-  // const [filter, setFilter] = useState("");
+  const [filter, setFilter] = useState("");
   const submit = () => {
     if (inputStateContent.length > 0 && inputStateAuthor.length > 0 && inputStateDate.length > 0) {
       setArray(tweetArr => [...tweetArr,{content: inputStateContent, author: inputStateAuthor, date: inputStateDate, likes:0, retweets:0}])
@@ -21,18 +21,17 @@ function App() {
       setInputStateDate("");
     };
   };
-  // const filtertweets = () => {
-  //   for (const element in Array){
-  //     if (element.content === (filter)){
-  //       return(
-  //         true
-  //       )
-  //     }
-  //     else{
-  //       Array.splice(Array[element],1)
-  //     }
-  //   }
-  // }
+  const forEachFilter = (e) => {
+    let eArray = [e]
+    if (!eArray.includes(filter)){
+      Array.splice(Array[e],1)
+    }
+  }
+  const filtertweets = () => {
+    Array.forEach(function(element){
+      forEachFilter(element)
+    })
+  }
   return (
     <div className = "bg">
       <Header />
@@ -40,9 +39,9 @@ function App() {
       <input type="text" value = {inputStateContent} onChange={e => setInputStateContent(e.target.value)}/>
       <input type="text" value = {inputStateAuthor} onChange={e => setInputStateAuthor(e.target.value)}/>
       <input type="text" value = {inputStateDate} onChange={e => setInputStateDate(e.target.value)}/>
-      {/* <input type="text" value = {filter} onChange={e => setFilter(e.target.value)}/> */}
+      <input type="text" value = {filter} onChange={e => setFilter(e.target.value)}/>
       <button type = 'submit' onClick={submit}>SUBMIT</button>
-      {/* <button type = 'submit' onClick={filtertweets}>FILTER</button> */}
+      <button type = 'submit' onClick={filtertweets}>FILTER</button>
       <p>{inputStateContent}{inputStateAuthor}{inputStateDate}</p>
       <div className="app">
           {Array.map((tweet,i) => (
