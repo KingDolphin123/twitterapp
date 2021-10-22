@@ -19,7 +19,7 @@ function App() {
   const [filterempty, setFilterEmpty] = useState(false);
   const submit = () => {
     if (inputStateContent.length > 0 && inputStateAuthor.length > 0 && inputStateDate.length > 0) {
-      setArray(tweetArr => [...tweetArr,{content: inputStateContent, author: inputStateAuthor, date: inputStateDate, likes:0, retweets:0}])
+      setArray(tweetArr => [...tweetArr,{content: inputStateContent, author: inputStateAuthor, date: inputStateDate, likes:1000, retweets:0}])
       setInputStateContent("");
       setInputStateAuthor("");
       setInputStateDate("");
