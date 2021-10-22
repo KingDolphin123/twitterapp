@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
 import Header from './Components/Header';
 import Body from './Components/Body';
 import Tweets from './Components/Tweets';
@@ -19,7 +19,7 @@ function App() {
   const [filterempty, setFilterEmpty] = useState(false);
   const submit = () => {
     if (inputStateContent.length > 0 && inputStateAuthor.length > 0 && inputStateDate.length > 0) {
-      setArray(tweetArr => [...tweetArr,{content: inputStateContent, author: inputStateAuthor, date: inputStateDate, likes:1000, retweets:0}])
+      setArray(tweetArr => [...tweetArr,{content: inputStateContent, author: inputStateAuthor, date: inputStateDate, likes:1000, retweets:0}]);
       setInputStateContent("");
       setInputStateAuthor("");
       setInputStateDate("");
@@ -35,7 +35,7 @@ function App() {
     }
   }
   const filtertweets = () => {
-    let filteredtweets = Array.filter(filterfunc)
+    let filteredtweets = Array.filter(filterfunc);
     setFilterBool(!filterBool);
     if (filteredtweets.length === 0){
       setFilterEmpty(true);
