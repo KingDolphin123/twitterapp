@@ -27,9 +27,9 @@ const Tweets = props => {
             <div>
                 <div className = 'buttons'>
                     <p> </p>
-                    {retweet ? <button className = 'button' onClick={()=>{setRetweet(false);setnumretweets(numretweets-1)}}>Undo Retweet</button> : <button className = 'button' onClick={()=>{setRetweet(true);setnumretweets(numretweets+1)}}>Retweet</button>}
+                    {retweet ? <button className = 'tbutton' onClick={()=>{setRetweet(false);setnumretweets(numretweets-1)}}>Undo Retweet</button> : <button className = 'tbutton' onClick={()=>{setRetweet(true);setnumretweets(numretweets+1)}}>Retweet</button>}
                     {likes ? <input className = 'image' type='image' name = 'Add Like' src={blueheart} alt = 'redheart' onClick={()=>{setnumlikes(numlikes-1);setLikes(false)}}/> : <input className = 'image' type='image' name = 'Add Like' src={whiteheart} alt = 'whiteheart' onClick={()=>{setnumlikes(numlikes+1);setLikes(true)}}/>}
-                    {trending ? <button className = 'button' onClick={()=>{setTrending(false)}}>make not trending</button> : <button className = 'button' onClick={()=>{setTrending(true)}}>make trending</button>}
+                    {trending ? <button className = 'tbutton' onClick={()=>{setTrending(false)}}>make not trending</button> : <button className = 'tbutton' onClick={()=>{setTrending(true)}}>make trending</button>}
                     <p> </p> 
                 </div>
             </div>
