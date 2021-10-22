@@ -2,7 +2,7 @@ import React from 'react';
 import "../css/Header.css"
 
 const Header = () => {
-    let headerTitle = "header";
+    let headerTitle = "TwitterApp";
     return (
         <div className = 'title'>
             <p>{headerTitle}</p>
