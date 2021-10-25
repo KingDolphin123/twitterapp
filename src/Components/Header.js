@@ -4,7 +4,7 @@ import "../css/Header.css";
 const Header = () => {
     let headerTitle = "TwitterApp";
     return (
-        <div className = 'title'>
+        <div className='title'>
             <p>{headerTitle}</p>
         </div>
     )
