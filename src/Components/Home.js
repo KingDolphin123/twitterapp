@@ -84,7 +84,7 @@ const Home = () => {
                     )}
 
                     {doglink.map((url) => {
-                        <img src={url} alt = 'dog'></img>
+                        <img src={url.url} alt = 'dog'></img>
                     })}
 
                 </div>
