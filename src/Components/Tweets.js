@@ -21,8 +21,9 @@ const Tweets = props => {
     const [predage, setpredage] = useState('');
 
     useEffect(()=>{
-        axios.get("https://api.agify.io/?name="+props.authorstr).then(response => setpredage(response.data.age))
-    },[props.author])
+        console.log("in use")
+        axios.get("https://api.agify.io/?name="+props.authorstr).then(response => console.log(response.data.age))
+    },[props.authorstr])
     return (
         <div className="tweets">
             <div className='authordateflex'>

@@ -19,7 +19,8 @@ const Home = () => {
     const [filterArray, setFilterArray] = useState(filterArray1);
     const [filterBool, setFilterBool] = useState(false);
     const [filterempty, setFilterEmpty] = useState(false);
-    const [doglink, setdoglink] = useState([])
+    const [doglink, setdoglink] = useState([]);
+    const [dogt, setdogt] = useState(false);
     // const passauthor = (e) => {
     //     return <Profile author={e} />
     // }
@@ -35,7 +36,8 @@ const Home = () => {
         };
     };
     const createdog = () => {
-        axios.get("https://dog.ceo/api/breeds/image/random").then(response => setdoglink(doglink => [...doglink, {url: response.data.message}]))
+        axios.get("https://dog.ceo/api/breeds/image/random").then(response => setdoglink(doglink => [...doglink, response.data.message]))
+        setdogt(!dogt)
     }
     const filterfunc = (e) => {
         if (e.content.includes(filter)) {
@@ -56,6 +58,9 @@ const Home = () => {
         }
         setFilterArray(filteredtweets);
         setFilter('');
+    }
+    const log = () =>{
+        console.log(doglink)
     }
     return (
         <div className="bg">
@@ -82,10 +87,12 @@ const Home = () => {
                             <Tweets key={i + 1} content={tweet.content} authorstr = {tweet.author} author={<Link onClick={()=>{<Profile author={tweet.author} />}} to={() => linkurlmake(tweet.author)}>{tweet.author}</Link>} date={tweet.date} likes={tweet.likes} retweets={tweet.retweets} />
                         )))
                     )}
-
-                    {doglink.map((url) => {
-                        <img src={url.url} alt = 'dog'></img>
-                    })}
+                    <button onClick={log}>button</button>
+                    {dogt ? (doglink.map((url) => {
+                        <img src={url} alt = 'dog'></img>})):
+                    (doglink.map((url) => {
+                        <img src={url} alt = 'dog'></img>
+                    }))}
 
                 </div>
             </div>
