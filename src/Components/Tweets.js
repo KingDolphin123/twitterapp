@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import "../css/Tweets.css"
 import whiteheart from "../css/whiteheart.png"
 import blueheart from "../css/blueheart.png"
+import {random} from 'mathjs'
+import axios from 'axios'
 
 const Tweets = props => {
     const [likes, setLikes] = useState(false);
@@ -9,10 +11,22 @@ const Tweets = props => {
     const [trending, setTrending] = useState(parseInt(props.likes) > 1000 ? true : false);
     const [numlikes, setnumlikes] = useState(props.likes);
     const [numretweets, setnumretweets] = useState(props.retweets);
+    // let author = 'hlgkjfjhg';
+    useEffect(()=>{
+        let rand = random()
+        if (rand>=.5){
+        setTimeout(()=> setnumlikes((numlikes => numlikes + 1), setLikes(true)), 1000)
+        }
+    }, [])
+    const [predage, setpredage] = useState('');
+
+    useEffect(()=>{
+        axios.get("https://api.agify.io/?name="+props.authorstr).then(response => setpredage(response.data.age))
+    },[props.author])
     return (
         <div className="tweets">
             <div className='authordateflex'>
-                <p className='tweetheader tweetauthor'>{props.author}</p>
+                <p className='tweetheader tweetauthor'>{props.authorstr} - {predage}</p>
                 <p className='tweetheader dash'>-</p>
                 <p className='tweetheader tweetdate'>{props.date}</p>
             </div>

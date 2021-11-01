@@ -4,6 +4,7 @@ import Header from './Header';
 import Body from './Body';
 import Tweets from './Tweets';
 import Profile from "./Profile";
+import axios from 'axios';
 
 const Home = () => {
     let sampletweet1 = { content: 'hello', author: 'ko', date: '918ce', likes: 3, retweets: 1 };
@@ -18,6 +19,7 @@ const Home = () => {
     const [filterArray, setFilterArray] = useState(filterArray1);
     const [filterBool, setFilterBool] = useState(false);
     const [filterempty, setFilterEmpty] = useState(false);
+    const [doglink, setdoglink] = useState([])
     // const passauthor = (e) => {
     //     return <Profile author={e} />
     // }
@@ -32,7 +34,9 @@ const Home = () => {
             setInputStateDate("");
         };
     };
-
+    const createdog = () => {
+        axios.get("https://dog.ceo/api/breeds/image/random").then(response => setdoglink(doglink => [...doglink, {url: response.data.message}]))
+    }
     const filterfunc = (e) => {
         if (e.content.includes(filter)) {
             return true;
@@ -67,16 +71,21 @@ const Home = () => {
                     <input placeholder='Enter Author..' className='input' type="text" value={inputStateAuthor} onChange={e => setInputStateAuthor(e.target.value)} />
                     <input placeholder='Enter Date' className='input' type="text" value={inputStateDate} onChange={e => setInputStateDate(e.target.value)} />
                     <button className='inputbutton' type='submit' onClick={submit}>SUBMIT</button>
+                    <button className ='dog' type='submit' onClick={createdog}>create dog</button>
                 </div>
                 <div className="app">
                     {filterempty ? "no tweets to show" : (filterBool ?
                         (filterArray.map((tweet, i) => (
-                            <Tweets key={i + 1} content={tweet.content} author={<Link onClick={()=>{<Profile author={tweet.author} />}} to={() => linkurlmake(tweet.author)}>{tweet.author}</Link>} date={tweet.date} likes={tweet.likes} retweets={tweet.retweets} />
+                            <Tweets key={i + 1} content={tweet.content} authorstr = {tweet.author} author={<Link onClick={()=>{<Profile author={tweet.author} />}} to={() => linkurlmake(tweet.author)}>{tweet.author}</Link>} date={tweet.date} likes={tweet.likes} retweets={tweet.retweets} />
                         ))) :
                         (Array.map((tweet, i) => (
-                            <Tweets key={i + 1} content={tweet.content} author={<Link onClick={()=>{<Profile author={tweet.author} />}} to={() => linkurlmake(tweet.author)}>{tweet.author}</Link>} date={tweet.date} likes={tweet.likes} retweets={tweet.retweets} />
+                            <Tweets key={i + 1} content={tweet.content} authorstr = {tweet.author} author={<Link onClick={()=>{<Profile author={tweet.author} />}} to={() => linkurlmake(tweet.author)}>{tweet.author}</Link>} date={tweet.date} likes={tweet.likes} retweets={tweet.retweets} />
                         )))
                     )}
+
+                    {doglink.map((url) => {
+                        <img src={url} alt = 'dog'></img>
+                    })}
 
                 </div>
             </div>
