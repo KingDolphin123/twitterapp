@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import Header from './Header';
 import Body from './Body';
 import Tweets from './Tweets';
 import Profile from "./Profile";
 import axios from 'axios';
+import firestore from '../firebase'
+import {collection, getDocs, addDoc} from 'firebase/firestore/lite'
 
 const Home = () => {
     let sampletweet1 = { content: 'hello', author: 'ko', date: '918ce', likes: 3, retweets: 1 };
@@ -21,6 +23,18 @@ const Home = () => {
     const [filterempty, setFilterEmpty] = useState(false);
     const [doglink, setdoglink] = useState([]);
     const [dogt, setdogt] = useState(false);
+    const [reload, setreload] = useState(false);
+    useEffect(()=>{
+        let tweetsss = collection(firestore, "Tweets");
+        getDocs(tweetsss).then(snapshot => {
+        //snapshot is an array of all the documents in the tweets
+        let temptweets = []
+        snapshot.forEach(document => {
+            temptweets.push(document.data());
+        });
+        setArray(temptweets);
+        });
+    },[reload]);
     // const passauthor = (e) => {
     //     return <Profile author={e} />
     // }
@@ -29,10 +43,18 @@ const Home = () => {
     }
     const submit = () => {
         if (inputStateContent.length > 0 && inputStateAuthor.length > 0 && inputStateDate.length > 0) {
-            setArray(tweetArr => [...tweetArr, { content: inputStateContent, author: inputStateAuthor, date: inputStateDate, likes: 1000, retweets: 0 }]);
+            // setArray(tweetArr => [...tweetArr, { content: inputStateContent, author: inputStateAuthor, date: inputStateDate, likes: 1000, retweets: 0 }]);
+            const docRef = addDoc(collection(firestore, "Tweets"), {
+                content: inputStateContent,
+                author: inputStateAuthor,
+                date: inputStateDate, 
+                likes: 1000, 
+                retweets: 0 
+              }).then(()=>{setreload(!reload)});
             setInputStateContent("");
             setInputStateAuthor("");
             setInputStateDate("");
+            
         };
     };
     const createdog = () => {

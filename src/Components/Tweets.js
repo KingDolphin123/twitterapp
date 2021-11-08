@@ -5,12 +5,17 @@ import blueheart from "../css/blueheart.png"
 import {random} from 'mathjs'
 import axios from 'axios'
 
+
 const Tweets = props => {
     const [likes, setLikes] = useState(false);
     const [retweet, setRetweet] = useState(false);
     const [trending, setTrending] = useState(parseInt(props.likes) > 1000 ? true : false);
     const [numlikes, setnumlikes] = useState(props.likes);
     const [numretweets, setnumretweets] = useState(props.retweets);
+    useEffect(()=>{
+
+    },[]);
+
     // let author = 'hlgkjfjhg';
     useEffect(()=>{
         let rand = random()
